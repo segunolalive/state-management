@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import NavigationLink from './NavigationLink';
 
 const Sidebar = ({ routes }) => (
   <aside className="sidebar">
@@ -7,10 +8,9 @@ const Sidebar = ({ routes }) => (
       <li>
         <Link to="/">HOME</Link>
       </li>
+      <NavigationLink route={''} />
       {routes.map(route => (
-        <li key={route}>
-          <Link to={`/${route}`}>{route.toUpperCase()}</Link>
-        </li>
+        <NavigationLink route={route} key={route} />
       ))}
     </nav>
   </aside>

@@ -1,12 +1,11 @@
 import React from 'react';
+import Comment from './Comment';
 
 const Page = ({page: { topic = '', comments = [] }}) => (
   <section>
     <h3>{topic}</h3>
-    {comments.map((comment, index) => (
-      <div className="comment-box" key={index}>
-        <p>{comment}</p>
-      </div>
+    {comments.map((text, index) => (
+      <Comment text={text} key={index} />
     ))}
   </section>
 );
